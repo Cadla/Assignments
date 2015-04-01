@@ -10,8 +10,8 @@ namespace RandomNumbers
     {
         static void Main(string[] args)
         {
-            //Gets the random number returned from method
-            var resultRandomNumber = GetRandomNumber();
+            //Gets the random number returned 4m method
+            int resultRandomNumber = GetRandomNumber();
 
             //Printing the result out.
             Console.WriteLine(string.Format("Random Number From 1 to 100 is : {0}", resultRandomNumber));
