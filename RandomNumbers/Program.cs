@@ -10,38 +10,35 @@ namespace RandomNumbers
     {
         static void Main(string[] args)
         {
-            //Gets the random number returned 4m method
-            int resultRandomNumber = GetRandomNumber();
 
-            //Printing the result out.
-            Console.WriteLine(string.Format("Random Number From 1 to 100 is : {0}", resultRandomNumber));
+            Random r = new Random();
 
-            if (resultRandomNumber < 10)
-                Console.WriteLine("Too low");
-            if (resultRandomNumber > 90)
-                Console.WriteLine("Too high");
+            //Gets next random number ranging from 1 to 10.
+            int resultRandomNumber = r.Next(1, 100);
 
+            //Enter a number to compare with random number
+            Console.WriteLine("Please enter a number");
+            int enteredNumber = Int32.Parse(Console.ReadLine());
+
+            //Determine if the entered number is greater or less than system picked random number.
+            while (enteredNumber != resultRandomNumber)
+            {
+
+                if (enteredNumber > resultRandomNumber)
+                    Console.WriteLine(string.Format("{0} is higher than current random number", enteredNumber));
+
+                else if (enteredNumber < resultRandomNumber)
+                    Console.WriteLine(string.Format("{0} is lower than current random number", enteredNumber));
+
+                //Entered number was not eaqul to random number. Give it a next try.
+                Console.WriteLine("Please enter a new number");
+                enteredNumber = Int32.Parse(Console.ReadLine());
+            }
+
+            //Here the number matches & writes the result to console.
+            Console.WriteLine(string.Format("Super! You found correct random number: {0}", resultRandomNumber));
             Console.ReadLine();
         }
 
-        private static int GetRandomNumber()
-        {
-            //Creating a List to store numbers from 1 to 100
-            List<int> randomList = new List<int>();
-
-            //Adding numbers 1 by 1 upto 100
-            for (int i = 1; i <= 100; i++)
-            {
-                randomList.Add(i);
-            }
-
-            // Random Class which gives a Random number every time
-            Random rnd = new Random();
-
-            //Storing fetched random number to a integer variable called "result"
-            int result = rnd.Next(randomList.Count);
-
-            return result;
-        }
     }
 }
