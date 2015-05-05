@@ -10,3 +10,6 @@ C:\Users\ravitalveda\Downloads\RandomNumbers-master\RandomNumbers-master\RandomN
 C:\Users\ravitalveda\Downloads\RandomNumbers-master\RandomNumbers-master\RandomNumbers\bin\Debug\RandomNumbers.exe
 C:\Users\ravitalveda\Downloads\RandomNumbers-master\RandomNumbers-master\RandomNumbers\bin\Debug\RandomNumbers.pdb
 C:\Users\ravitalveda\Downloads\RandomNumbers-master\RandomNumbers-master\RandomNumbers\obj\Debug\RandomNumbers.csprojResolveAssemblyReference.cache
+C:\Users\ravitalveda\Source\Repos\RandomNumbers\RandomNumbers\bin\Debug\RandomNumbers.exe.config
+C:\Users\ravitalveda\Source\Repos\RandomNumbers\RandomNumbers\obj\Debug\RandomNumbers.exe
+C:\Users\ravitalveda\Source\Repos\RandomNumbers\RandomNumbers\obj\Debug\RandomNumbers.pdb
