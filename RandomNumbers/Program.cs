@@ -11,29 +11,44 @@ namespace RandomNumbers
         static void Main(string[] args)
         {
 
-            Console.WriteLine("Decide a number to let the computer guess it: ");
+            Console.WriteLine("Decide a number from 1 to 100 to let the computer guess it: ");
             int enteredNumber = Int32.Parse(Console.ReadLine());
 
             Random r = new Random();
 
-            //Gets next random number ranging from 1 to 10.
-            int randomNumber = r.Next(1, 100);
+            //Gets next random number ranging from 1 to 100.
+            int computerGussedNumber = r.Next(1, 100);
+            int counter = 0;
+            int maxTrials = 7;
 
-            while (enteredNumber != randomNumber)
+            while (enteredNumber != computerGussedNumber && counter <= maxTrials)
             {
 
-                if (randomNumber > enteredNumber)
-                    Console.WriteLine(string.Format("Computer guess {0} is higher  ", randomNumber));
+                if (computerGussedNumber > enteredNumber)
+                    Console.WriteLine(string.Format("Computer guess {0} is higher  ", computerGussedNumber));
 
-                else if (randomNumber < enteredNumber)
-                    Console.WriteLine(string.Format("Computer guess {0} is lower", randomNumber));
+                else if (computerGussedNumber < enteredNumber)
+                    Console.WriteLine(string.Format("Computer guess {0} is lower", computerGussedNumber));
 
-                randomNumber = r.Next(1, 100);
+                computerGussedNumber = r.Next(1, 100);
                 Console.ReadLine();
+                counter++;
+
+                if (counter == maxTrials)
+                {
+                    Console.WriteLine("Sorry computer. You've used maximum trials. Better luck next time!");
+                    Console.ReadLine();
+                    return;
+                }
+                else
+                {
+                    Console.WriteLine("Computer has {0} more trials \n", maxTrials - counter);
+                }
+                
             }
 
             //Here the number matches & writes the result to console.
-            Console.WriteLine(string.Format("Super! This time computer has made it. The user input is: {0}", randomNumber));
+            Console.WriteLine(string.Format("Super! This time computer has made it. The user input is: {0}", computerGussedNumber));
             Console.ReadLine();
         }
 
