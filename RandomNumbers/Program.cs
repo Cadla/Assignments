@@ -6,8 +6,34 @@ using System.Threading.Tasks;
 
 namespace RandomNumbers
 {
-    public class Program
+    class Program
     {
+        private static int GetMedian(List<int> list)
+        {
+            List<int> orderedList = list
+                .OrderBy(numbers => numbers)
+                .ToList();
+
+            int listSize = orderedList.Count;
+            int result;
+
+            // even
+            if (listSize % 2 == 0) 
+            {
+                int midIndex = listSize / 2;
+                result = ((orderedList.ElementAt(midIndex - 1) +
+                           orderedList.ElementAt(midIndex)) / 2);
+            }
+            // odd
+            else 
+            {
+                double element = (double)listSize / 2;
+                element = Math.Round(element, MidpointRounding.AwayFromZero);
+                result = orderedList.ElementAt((int)(element - 1));
+            }
+
+            return result;
+        }
         static void Main(string[] args)
         {
 
@@ -16,75 +42,45 @@ namespace RandomNumbers
 
             Random r = new Random();
 
-            //Gets next random number ranging from 1 to 100.
-            int min = 1;
-            int max = 100;
-            int computerGussedNumber = r.Next(min, max);
+            //Computer .
+            int computerGussedNumber = 50;
             int counter = 0;
             int maxTrials = 7;
+            int min = 1;
+            int max = 100;
+            var list = new List<int>();
 
             while (enteredNumber != computerGussedNumber && counter <= maxTrials)
             {
                 if (computerGussedNumber > enteredNumber)
                 {
                     Console.WriteLine(string.Format("Computer guess {0} is higher  ", computerGussedNumber));
-                    //Set max range by narrowing the search area. Set max
-                    if (min < computerGussedNumber - 15 && enteredNumber < computerGussedNumber - 15)
-                    {
-                        max = computerGussedNumber - 15;
-                        Console.WriteLine("Since {0} is too higher than user input, it's max range is reduced by 15", computerGussedNumber);
-                    }
-                    else if (min < computerGussedNumber - 10 && enteredNumber < computerGussedNumber - 10)
-                    {
-                        max = computerGussedNumber - 10;
-                        Console.WriteLine("Since {0} is a bit higher it's max range is reduced by 10", computerGussedNumber);
-                    }
-                    else if (min < computerGussedNumber - 5 && enteredNumber < computerGussedNumber - 5)
-                    {
-                        max = computerGussedNumber - 5;
-                        Console.WriteLine("Since {0} is little higher it's max range is reduced by 5", computerGussedNumber);
-                    }
-                    else
-                    {
-                        max = computerGussedNumber - 1;
-                        Console.WriteLine("Since {0} is little higher it's max range is reduced by 1", computerGussedNumber);
-                    }
+                    max = computerGussedNumber - 1;
                     
-                    //Minimize search area. Take a number from min to current guess
-                    computerGussedNumber = r.Next(min, max);
+                    for (int i = min; i <= max; i++)
+                    {
+                        list.Add(i);
+                    }
+                    computerGussedNumber = GetMedian(list);
 
                 }
                 else if (computerGussedNumber < enteredNumber)
                 {
                     Console.WriteLine(string.Format("Computer guess {0} is lower", computerGussedNumber));
-                    // set min range from current system guess. Since it's lower let the system search from next number to current low.
-                    if (max > computerGussedNumber + 15 && enteredNumber > computerGussedNumber + 15)
+                    min = computerGussedNumber + 1;
+                    
+                    for (int i = min; i <= max; i++)
                     {
-                        min = computerGussedNumber + 15;
-                        Console.WriteLine("Since {0} is too lower than user input, it's min range is increased by 15", computerGussedNumber);
+                        list.Add(i);
                     }
-                    else if (max > computerGussedNumber + 10 && enteredNumber > computerGussedNumber + 10)
-                    {
-                        min = computerGussedNumber + 10;
-                        Console.WriteLine("Since {0} is lower it's min range is increased by 10", computerGussedNumber);
-                    }
-                    else if (max > computerGussedNumber + 5 && enteredNumber > computerGussedNumber + 5)
-                    {
-                        min = computerGussedNumber + 5;
-                        Console.WriteLine("Since {0} is a bit lower it's min range is increased by 5", computerGussedNumber);
-                    }
-                    else
-                    {
-                        min = computerGussedNumber + 1;
-                        Console.WriteLine("Since {0} is a little lower it's min range is increased by 1", computerGussedNumber);
-                    }
-                    computerGussedNumber = r.Next(min, max);
+                    computerGussedNumber = GetMedian(list);
                 }
 
+                Console.WriteLine("Min Range: " + min);
+                Console.WriteLine("Max Range: " + max);
 
-                Console.WriteLine("Computer Random Search Area: \nMinvalue: " + min.ToString());
-                Console.WriteLine("Maxvalue: " + max.ToString());
                 Console.ReadLine();
+                list.Clear();
                 counter++;
 
                 if (counter == maxTrials)
