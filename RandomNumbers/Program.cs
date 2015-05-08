@@ -8,6 +8,7 @@ namespace RandomNumbers
 {
     class Program
     {
+
         static void Main(string[] args)
         {
             Console.WriteLine("Decide a number from 1 to 100 to let the computer guess it: ");
@@ -24,7 +25,7 @@ namespace RandomNumbers
                     computerGuess = min + (max - min) / 2;
                 }
                 else if (computerGuess < userInput)
-                {
+            {
                     Console.WriteLine(string.Format("Computer guess {0} is lower", computerGuess));
                     min = computerGuess;
                     computerGuess = max - (max - min) / 2;
