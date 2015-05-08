@@ -6,41 +6,45 @@ using System.Threading.Tasks;
 
 namespace RandomNumbers
 {
-    class Program
+    public class Program
     {
 
-        static void Main(string[] args)
+        public static int CountTrails(int userInput, int minRange, int maxRange)
         {
-            Console.WriteLine("Decide a number from 1 to 100 to let the computer guess it: ");
-            int userInput = Int32.Parse(Console.ReadLine());
-            int computerGuess = 50, counter = 0, min=1, max=100;
+            int counter = 1;
             const int maxTrials = 7;
+            double computerGuess = Math.Round(((double)maxRange - (double)minRange) / 2);
 
-            while (userInput != computerGuess && counter <= maxTrials)
+            while (userInput != computerGuess)
             {
+                Console.WriteLine("Computer's {0}th try \n", counter);
+
                 if (computerGuess > userInput)
                 {
                     Console.WriteLine(string.Format("Computer guess {0} is higher  ", computerGuess));
-                    max = computerGuess;
-                    computerGuess = min + (max - min) / 2;
+                    maxRange = (int)computerGuess;
+                    computerGuess = minRange + (maxRange - minRange) / 2;
                 }
                 else if (computerGuess < userInput)
-            {
+                {
                     Console.WriteLine(string.Format("Computer guess {0} is lower", computerGuess));
-                    min = computerGuess;
-                    computerGuess = max - (max - min) / 2;
+                    minRange = (int)computerGuess;
+                    computerGuess = maxRange - (maxRange - minRange) / 2;
                 }
 
-                Console.WriteLine("Min Range: " + min);
-                Console.WriteLine("Max Range: " + max);
-                Console.ReadLine();
-                counter++;
-
-                Console.WriteLine("Computer has {0} more trials \n", maxTrials - counter);
+                Console.WriteLine("Min Range: " + minRange);
+                Console.WriteLine("Max Range: " + maxRange);
+                //Console.ReadLine();
+                counter++;                
             }
+            return counter;
+        }
 
+        static void Main(string[] args)
+        {
+            int count = CountTrails(3, 2, 1008);
             //Here the number matches & writes the result to console.
-            Console.WriteLine(string.Format("Super! This time computer has made it. The user input is: {0}", computerGuess));
+            Console.WriteLine(string.Format("Super! Computer has made it in {0} trials!", count));
             Console.ReadLine();
         }
     }
