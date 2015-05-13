@@ -1,5 +1,4 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using RandomNumbers;
 
 namespace UnitTest
@@ -8,30 +7,70 @@ namespace UnitTest
     [TestClass]
     public class UnitTest1
     {
-        Program p = new Program();
-
         [TestMethod]
         public void TestMethod1()
         {
             //First  
-            Program.TrianlgeSidesInput(10, 10, 15);
-            
+            Program.CountTrails(50, 1, 100);
         }
 
         [TestMethod]
         public void TestMethod2()
         {
             //Second Test  
-            Trigonometric.TrianlgeSidesInput(10.5, 10.5, 15);
+            Program.CountTrails(50, 1, 1000);
 
         }
-
         [TestMethod]
         public void TestMethod3()
         {
-            //Thisrd Test  
-            Trigonometric.TrianlgeSidesInput(10.5, 12.5, 15.5);
+            //Third Test  
+            Program.CountTrails(50, 17, 100);
+        }
+
+
+        [TestMethod]
+        public void TestMethod4()
+        {
+            Program.CountTrails(51, 1, 100);
+        }
+
+        [TestMethod]
+        public void TestMethod5()
+        {
+            Program.CountTrails(50, 200, 400);
+        }
+
+        [TestMethod]
+        public void TestMethod6()
+        {
+            //Sixth  
+            Program.CountTrails(50, 1, 100);
+        }
+
+        [TestMethod]
+        public void TestMethod7()
+        {
+            Program.CountTrails(99, 1, 100);
+        }
+
+        [TestMethod]
+        public void TestMethod8()
+        {
+            Program.CountTrails(-10, 1, 100);
 
         }
+        [TestMethod]
+        public void TestMethod9()
+        {
+            Program.CountTrails(0, -199, 100);
+        }
+
+        [TestMethod]
+        public void TestMethod10()
+        {
+            Program.CountTrails(1, 50, 100);
+        }
+
     }
 }
