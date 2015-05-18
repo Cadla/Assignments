@@ -3,11 +3,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{1FDD5828-56C4-4BDE-ADB1-A3F53D9EDF4C}</ProjectGuid>
+    <ProjectGuid>{F718EF50-B318-4120-A477-26DD8FE77910}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>UnitTest</RootNamespace>
-    <AssemblyName>UnitTest</AssemblyName>
+    <RootNamespace>Assignments.Test</RootNamespace>
+    <AssemblyName>Assignments.Test</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -52,11 +52,12 @@
   <ItemGroup>
     <Compile Include="RandomNumbersTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="NumberCollectionTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Assignments\Assignments.csproj">
       <Project>{b67b1eb6-7f65-4c84-bfc8-3347c5a1453f}</Project>
-      <Name>RandomNumbers</Name>
+      <Name>Assignments</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>
