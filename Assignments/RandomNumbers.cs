@@ -28,23 +28,23 @@ namespace Assignments
 
             while (userInput != computerGuess)
             {
-                Console.WriteLine("Computer's {0}th try \n", counter);
+                //Console.WriteLine("Computer's {0}th try \n", counter);
 
                 if (computerGuess > userInput)
                 {
-                    Console.WriteLine(string.Format("Computer guess {0} is higher  ", computerGuess));
+                    //Console.WriteLine(string.Format("Computer guess {0} is higher  ", computerGuess));
                     maxRange = (int)computerGuess;
                     computerGuess = minRange + (maxRange - minRange) / 2;
                 }
                 else if (computerGuess < userInput)
                 {
-                    Console.WriteLine(string.Format("Computer guess {0} is lower", computerGuess));
+                    //Console.WriteLine(string.Format("Computer guess {0} is lower", computerGuess));
                     minRange = (int)computerGuess;
                     computerGuess = maxRange - (maxRange - minRange) / 2;
                 }
 
-                Console.WriteLine("Min Range: " + minRange);
-                Console.WriteLine("Max Range: " + maxRange);
+                //Console.WriteLine("Min Range: " + minRange);
+                //Console.WriteLine("Max Range: " + maxRange);
                 counter++;
             }
             return counter;

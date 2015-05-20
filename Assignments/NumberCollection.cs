@@ -11,7 +11,11 @@ namespace Assignments
         public bool IsNumberInCollection(IEnumerable<int> collection, int number)
         {
             int count = 0;
-            foreach (var collNum in collection)
+
+            var coll = collection.ToList();
+            coll.Sort();
+
+            foreach (var collNum in coll)
             {
                 count++;
                 if (collNum == number)
