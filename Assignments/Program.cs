@@ -17,7 +17,7 @@ namespace Assignments
             #region NumberCollection
             
             NumberCollection nc = new NumberCollection();
-            bool isExisting = nc.IsNumberInCollection(new int[] { 3, 4, 5, 6, 7, 9, 10, 13, 15, 17, 8 }, 8);
+            bool isExisting = nc.IsNumberInCollection(new int[] { 9, 7, 5, 1, 3 }, 7);
 
             if (isExisting)
                 Console.WriteLine("Given number is in collection");
