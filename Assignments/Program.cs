@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Assignments
 {
@@ -15,9 +10,9 @@ namespace Assignments
             RandomNumberTimeCounter ts = new RandomNumberTimeCounter();
 
             #region NumberCollection
-            
+
             NumberCollection nc = new NumberCollection();
-            bool isExisting = nc.IsNumberInCollection(new int[] { 9, 7, 5, 1, 3 }, 7);
+            bool isExisting = nc.IsNumberInCollection(new int[] { 1, 7, 3, 5, 11, 9, 13, 15 }, 11);
 
             if (isExisting)
                 Console.WriteLine("Given number is in collection");
@@ -25,7 +20,7 @@ namespace Assignments
                 Console.WriteLine("Given number is not in collection");
 
             Console.ReadLine();
-            
+
             #endregion
 
             #region RandomNumbers
