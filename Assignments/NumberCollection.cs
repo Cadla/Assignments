@@ -10,14 +10,7 @@ namespace Assignments
         {
             int count = 0;
 
-            var sortedCollection = collection.ToList();
-            sortedCollection.Sort();
-            var numberIndex = sortedCollection.IndexOf(number);
-
-            if (numberIndex >= sortedCollection.Count() / 2)
-                sortedCollection.Reverse();
-            
-            foreach (var collNum in sortedCollection)
+            foreach (var collNum in collection)
             {
                 count++;
                 if (collNum == number)

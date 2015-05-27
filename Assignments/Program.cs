@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Assignments
 {
@@ -9,16 +10,14 @@ namespace Assignments
         {
             RandomNumberTimeCounter ts = new RandomNumberTimeCounter();
 
-            #region NumberCollection
+            #region NumberInSortedCollection
 
-            NumberCollection nc = new NumberCollection();
-            bool isExisting = nc.IsNumberInCollection(new int[] { 1, 7, 3, 5, 11, 9, 13, 15 }, 11);
+            NumberInSortedCollection nc = new NumberInSortedCollection();
 
-            if (isExisting)
-                Console.WriteLine("Given number is in collection");
-            else
-                Console.WriteLine("Given number is not in collection");
+            int[] array = new int[] { 8, 10, 2, 6, 3, 10 };
+            Array.Sort<int>(array);         
 
+            Console.WriteLine("Iterations:" + nc.IsNumberInSortedCollection(array, 6));
             Console.ReadLine();
 
             #endregion
