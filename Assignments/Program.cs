@@ -8,17 +8,16 @@ namespace Assignments
 
         static void Main(string[] args)
         {
-            RandomNumberTimeCounter ts = new RandomNumberTimeCounter();
-
+            
             #region NumberInSortedCollection
 
-            NumberInSortedCollection nc = new NumberInSortedCollection();
+            //NumberInSortedCollection nc = new NumberInSortedCollection();
 
-            int[] array = new int[] { 8, 10, 2, 6, 3, 10 };
-            Array.Sort<int>(array);         
+            //int[] array = new int[] { 8, 10, 2, 6, 3, 10 };
+            //Array.Sort<int>(array);         
 
-            Console.WriteLine("Iterations:" + nc.IsNumberInSortedCollection(array, 6));
-            Console.ReadLine();
+            //Console.WriteLine("Iterations:" + nc.IsNumberInSortedCollection(array, 6));
+            //Console.ReadLine();
 
             #endregion
 
@@ -32,7 +31,8 @@ namespace Assignments
             #endregion
 
             #region RandomNumberTimeCounter
-            //ts.CountTime();
+            RandomNumberTimeCounter ts = new RandomNumberTimeCounter();
+            ts.CountTime();
             #endregion
 
         }
