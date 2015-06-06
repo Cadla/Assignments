@@ -14,7 +14,7 @@ namespace Assignments
 
         }
 
-        DataTable dt = new DataTable();
+        DataTable dt = new DataTable(); 
 
         public void CountTime()
         {
@@ -30,7 +30,7 @@ namespace Assignments
                 noOfTrails = rn.CountTrails(random.Next(1, i), 1, i);
                 stopwatch.Stop();
                 //Console.WriteLine("Time taken to count trials in range {0} - {1}: is {2}", 1, i, stopwatch.Elapsed);
-
+               
                 var row = dt.NewRow();
                 row[0] = string.Format("1 - {0}", i);
                 row[1] = stopwatch.Elapsed.ToString();

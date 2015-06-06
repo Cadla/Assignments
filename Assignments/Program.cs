@@ -1,9 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Assignments
 {
@@ -12,20 +8,17 @@ namespace Assignments
 
         static void Main(string[] args)
         {
-            RandomNumberTimeCounter ts = new RandomNumberTimeCounter();
-
-            #region NumberCollection
             
-            NumberCollection nc = new NumberCollection();
-            bool isExisting = nc.IsNumberInCollection(new int[] { 3, 4, 5, 6, 7, 9, 10, 13, 15, 17, 8 }, 8);
+            #region NumberInSortedCollection
 
-            if (isExisting)
-                Console.WriteLine("Given number is in collection");
-            else
-                Console.WriteLine("Given number is not in collection");
+            //NumberInSortedCollection nc = new NumberInSortedCollection();
 
-            Console.ReadLine();
-            
+            //int[] array = new int[] { 8, 10, 2, 6, 3, 10 };
+            //Array.Sort<int>(array);         
+
+            //Console.WriteLine("Iterations:" + nc.IsNumberInSortedCollection(array, 6));
+            //Console.ReadLine();
+
             #endregion
 
             #region RandomNumbers
@@ -38,7 +31,8 @@ namespace Assignments
             #endregion
 
             #region RandomNumberTimeCounter
-            //ts.CountTime();
+            RandomNumberTimeCounter ts = new RandomNumberTimeCounter();
+            ts.CountTime();
             #endregion
 
         }

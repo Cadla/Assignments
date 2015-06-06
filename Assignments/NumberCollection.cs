@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Assignments
 {
@@ -12,10 +10,7 @@ namespace Assignments
         {
             int count = 0;
 
-            var coll = collection.ToList();
-            coll.Sort();
-
-            foreach (var collNum in coll)
+            foreach (var collNum in collection)
             {
                 count++;
                 if (collNum == number)
@@ -26,6 +21,6 @@ namespace Assignments
             }
             Console.WriteLine("Iterations: " + count);
             return false;
-        }        
+        }
     }
 }
