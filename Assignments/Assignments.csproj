@@ -41,11 +41,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="RandomNumberTimeCounter.cs" />
     <Compile Include="NumberCollection.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RandomNumbers.cs" />
-    <Compile Include="RandomNumberTimeCounter.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
