@@ -1,8 +1,5 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Linq;
-using System.Collections;
-using System.Collections.Generic;
 
 namespace Assignments.Test
 {
@@ -21,7 +18,7 @@ namespace Assignments.Test
         [TestMethod]
         public void NumberCollection2()
         {
-            bool isExsisting = nc.IsNumberInCollection(Enumerable.Range(1, 100), 750);
+            bool isExsisting = nc.IsNumberInCollection(Enumerable.Range(1, 100), 46);
             Assert.IsTrue(isExsisting);
         }
 

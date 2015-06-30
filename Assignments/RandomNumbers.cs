@@ -38,9 +38,6 @@ namespace Assignments
                     minRange = (int)computerGuess;
                     computerGuess = maxRange - (maxRange - minRange) / 2;
                 }
-
-                //Console.WriteLine("Min Range: " + minRange);
-                //Console.WriteLine("Max Range: " + maxRange);
                 counter++;
             }
             return counter;

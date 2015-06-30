@@ -1,6 +1,5 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Assignments;
 
 namespace Assignments.Test
 {
@@ -12,8 +11,8 @@ namespace Assignments.Test
         public void RandomNumbersTest1()
         {
             //First  
-            int min = 99;
-            int max = 1;
+            const int min = 99;
+            const int max = 1;
             int rangeLength = max - min + 1;
             int expected = (int)Math.Ceiling(Math.Log(rangeLength, 2));
             int actual = rn.CountTrails(99, 1, 10);
@@ -23,8 +22,8 @@ namespace Assignments.Test
         [TestMethod]
         public void RandomNumbersTest2()
         {
-            int min = 50;
-            int max = 17;
+            const int min = 50;
+            const int max = 17;
             int rangeLength = max - min + 1;
             int expected = (int)Math.Ceiling(Math.Log(rangeLength, 2));
             int actual = rn.CountTrails(50, 17, 100);

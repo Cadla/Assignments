@@ -1,22 +1,34 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Assignments
 {
     public class Program
     {
 
-        static void Main(string[] args)
+        static void Main()
         {
+            #region NumberInRecursiveFunction
+
+            NumberInRecursiveFunction nc = new NumberInRecursiveFunction();
+
+            int[] array = Enumerable.Range(1, 100).ToArray();
+            //new int[] { 1, 3, 5, 7, 9 };
+
+            Console.WriteLine("Iterations:" + nc.GetNumberInRecursiveFunction(array, 49, 0, array.Length - 1));
+            Console.ReadLine();
+                
+            #endregion
             
             #region NumberInSortedCollection
 
             //NumberInSortedCollection nc = new NumberInSortedCollection();
 
-            //int[] array = new int[] { 8, 10, 2, 6, 3, 10 };
-            //Array.Sort<int>(array);         
+            //int[] array = Enumerable.Range(1, 100).ToArray();
+            //Array.Sort<int>(array);
 
-            //Console.WriteLine("Iterations:" + nc.IsNumberInSortedCollection(array, 6));
+            //Console.WriteLine("Iterations:" + nc.getNoOfIterationsToFindNumber(array, 50));
             //Console.ReadLine();
 
             #endregion
@@ -31,10 +43,10 @@ namespace Assignments
             #endregion
 
             #region RandomNumberTimeCounter
-            RandomNumberTimeCounter ts = new RandomNumberTimeCounter();
-            ts.CountTime();
+            //RandomNumberTimeCounter ts = new RandomNumberTimeCounter();
+            //ts.CountTime();
             #endregion
-
+           
         }
 
     }
